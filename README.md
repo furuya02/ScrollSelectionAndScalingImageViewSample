@@ -1,0 +1,2 @@
+# ScrollSelectionAndScalingImageViewSample
+スクロールビュー上の拡大できるイメージビュー（サンプル）
