@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGv-mv-djH" customClass="ImageScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMg-qN-usY">
+                                <rect key="frame" x="0.0" y="547" width="375" height="120"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtF-eN-4AX">
+                                        <rect key="frame" x="0.0" y="-2" width="3000" height="124"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="3000" id="2CP-qD-ceT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18481298741818175" green="0.18481298741818175" blue="0.18481298741818175" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RtF-eN-4AX" firstAttribute="centerY" secondItem="YMg-qN-usY" secondAttribute="centerY" id="Cxc-6G-c2D"/>
+                                    <constraint firstAttribute="bottom" secondItem="RtF-eN-4AX" secondAttribute="bottom" id="KTa-J6-Dmq"/>
+                                    <constraint firstItem="RtF-eN-4AX" firstAttribute="leading" secondItem="YMg-qN-usY" secondAttribute="leading" id="gI7-d6-OJV"/>
+                                    <constraint firstItem="RtF-eN-4AX" firstAttribute="top" secondItem="YMg-qN-usY" secondAttribute="topMargin" constant="-10" id="q6c-YD-Pp6"/>
+                                    <constraint firstAttribute="trailing" secondItem="RtF-eN-4AX" secondAttribute="trailing" id="qaI-pL-FC4"/>
+                                    <constraint firstAttribute="height" constant="120" id="wlV-1T-E1d"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IGv-mv-djH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7yp-FW-wyu"/>
+                            <constraint firstAttribute="trailing" secondItem="YMg-qN-usY" secondAttribute="trailing" id="8YJ-OE-Dj9"/>
+                            <constraint firstItem="IGv-mv-djH" firstAttribute="leading" secondItem="YMg-qN-usY" secondAttribute="leading" id="9Dy-T2-Oc4"/>
+                            <constraint firstItem="IGv-mv-djH" firstAttribute="trailing" secondItem="YMg-qN-usY" secondAttribute="trailing" id="Fih-Rz-RO1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YMg-qN-usY" secondAttribute="bottom" id="eUm-zc-Vmf"/>
+                            <constraint firstItem="YMg-qN-usY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="efO-pE-IEn"/>
+                            <constraint firstItem="YMg-qN-usY" firstAttribute="top" secondItem="IGv-mv-djH" secondAttribute="bottom" id="hBo-mP-lXX"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageScrollView" destination="IGv-mv-djH" id="EU1-bC-wLh"/>
+                        <outlet property="selectScrollView" destination="YMg-qN-usY" id="Hji-oi-Pmv"/>
+                        <outlet property="selectView" destination="RtF-eN-4AX" id="PcM-Wf-Pag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277.5" y="429.5"/>
+        </scene>
+    </scenes>
+</document>
