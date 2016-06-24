@@ -26,32 +26,32 @@
 - (void)viewDidAppear:(BOOL)animated{
 
     // 写真を配置する　元写真の大きさからサイズを決定する
-    const int baseSize = 100;
-    const int space = 10;
-    int offSet = 10;
-    for(int i=0; i<30; i++) {
+    const NSInteger baseSize = 100;
+    const NSInteger space = 10;
+    NSInteger offSet = 10;
+    for (NSInteger i=0; i<30; i++) {
 
-        NSString *photoName = [NSString stringWithFormat:@"%3.3d.jpg",i+1];
+        NSString *photoName = [NSString stringWithFormat:@"%3.3ld.jpg",i+1];
         UIImage *image = [UIImage imageNamed:photoName];
 
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 
         CGSize size = image.size;
         if ( size.width < size.height){ // portrait
-            int width = baseSize * (size.width / size.height);
+            NSInteger width = baseSize * (size.width / size.height);
             imageView.frame = CGRectMake(offSet, space, width, baseSize);
             offSet += width + space;
         } else { // landscape
-            int height = baseSize * (size.height / size.width);
+            NSInteger height = baseSize * (size.height / size.width);
             imageView.frame = CGRectMake(offSet ,space + (baseSize - height)/2, baseSize, height);
             offSet += baseSize + space;
         }
         imageView.userInteractionEnabled = YES;//タッチイベントを受け取る
         imageView.tag = i+1;
-        [_selectView addSubview:imageView];
+        [self.selectView addSubview:imageView];
 
     }
-    _selectScrollView.contentSize = CGRectMake(0, 0, offSet, 100 + space * 2).size;
+    self.selectScrollView.contentSize = CGRectMake(0, 0, offSet, 100 + space * 2).size;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -60,7 +60,7 @@
     NSLog( @"%ld",touch.view.tag );
     if (touch.view.tag > 0) {
         NSString *photoName = [NSString stringWithFormat:@"%3.3ld.jpg",touch.view.tag];
-        [_imageScrollView setImage:[UIImage imageNamed:photoName]];
+        [self.imageScrollView setImage:[UIImage imageNamed:photoName]];
     }
 }
 

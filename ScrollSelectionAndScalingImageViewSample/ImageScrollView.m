@@ -31,10 +31,10 @@
 - (void)setImage:(UIImage *)image
 {
     // 新しい画像でビューを再作成する
-    [_imageView removeFromSuperview];
-    _imageView = nil;
-    _imageView = [[UIImageView alloc] initWithImage:image];
-    [self addSubview:_imageView];
+    [self.imageView removeFromSuperview];
+    self.imageView = nil;
+    self.imageView = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:self.imageView];
 
     //画像のサイズを倍率にすればスクロールビュー（画面）いっぱいになるかを計算する
     float scale = 0;
@@ -51,14 +51,14 @@
 
     // 画像ビューを中央に配置する
     // 初期値　X=0,Y=0とする
-    CGRect newFrame = CGRectMake(0,0,_imageView.frame.size.width,_imageView.frame.size.height);
+    CGRect newFrame = CGRectMake(0,0,self.imageView.frame.size.width,self.imageView.frame.size.height);
     // 水平方向余白がある場合はX座標をずらす
-    if (_imageView.frame.size.width < self.bounds.size.width)
-        newFrame.origin.x = (self.bounds.size.width - _imageView.frame.size.width) / 2;
+    if (self.imageView.frame.size.width < self.bounds.size.width)
+        newFrame.origin.x = (self.bounds.size.width - self.imageView.frame.size.width) / 2;
     // 垂直方向余白がある場合はY座標をずらす
-    if (_imageView.frame.size.height < self.bounds.size.height)
-        newFrame.origin.y = (self.bounds.size.height - _imageView.frame.size.height) / 2;
-    _imageView.frame = newFrame;
+    if (self.imageView.frame.size.height < self.bounds.size.height)
+        newFrame.origin.y = (self.bounds.size.height - self.imageView.frame.size.height) / 2;
+    self.imageView.frame = newFrame;
 }
 
 
@@ -66,7 +66,7 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return _imageView;
+    return self.imageView;
 }
 
 @end
